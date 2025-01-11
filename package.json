@@ -1,0 +1,24 @@
+{
+  "name": "blog-api",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Luc-ay/Blog-API-SERVER#readme",
+  "bugs": {
+    "url": "https://github.com/Luc-ay/Blog-API-SERVER/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luc-ay/Blog-API-SERVER.git"
+  },
+  "license": "ISC",
+  "author": "Ay Code",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2"
+  }
+}
