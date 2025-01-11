@@ -10,6 +10,5 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer({ storage })
-upload.single('picture')
 
 export default upload
