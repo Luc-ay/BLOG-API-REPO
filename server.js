@@ -9,6 +9,7 @@ import { fileURLToPath } from 'url'
 import connectDB from './config/db.js'
 import register from './routes/auth.route.js'
 import userRoutes from './routes/users.js'
+import postRoutes from './routes/post.routes.js'
 
 // Configurations
 const __filename = fileURLToPath(import.meta.url)
@@ -30,6 +31,7 @@ app.use('/assets', express.static(path.join(__dirname, 'public/assets')))
 // ROutes with files
 app.use('/auth', register)
 app.use('/users', userRoutes)
+app.use('/posts', postRoutes)
 
 const PORT = process.env.PORT || 6001
 
