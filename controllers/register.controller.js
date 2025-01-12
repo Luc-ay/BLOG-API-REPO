@@ -15,7 +15,21 @@ export const registerController = async (req, res) => {
       occupation,
     } = req.body
 
-    const salt = await bcrypt.genSalt()
+    if (!firstName || !lastName || !email || !password || !occupation) {
+      return res.status(400).json({
+        Success: false,
+        Message: 'Please fill all the fields',
+      })
+    }
+
+    const verify = await User.findOne({ email })
+    if (verify) {
+      return res.status(400).json({
+        Success: false,
+        Message: 'Email already exist',
+      })
+    }
+    const salt = await bcrypt.genSalt(10)
     const hashedPassword = await bcrypt.hash(password, salt)
 
     const newUser = new User({
